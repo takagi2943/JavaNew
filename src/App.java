@@ -1,34 +1,34 @@
 public class App {
     public static void main(String[] args) throws Exception {
-        // 繰り返し実行したい処理
-        // String colour[] = {"赤","青","黄色","緑","ピンク"};
-        // // 　for文を使ったコード
-        // for (String all: colour) {
-        //     System.out.println(all);
-        // }
+        // 基本データ型
+        // int num = 1;
 
-        // // 拡張for文を使ったコード
-        // for (int i = 0; i < 5; i++) {
-        //     System.out.println(colour[i]);
-        // }
+        // // 基本データ型からラッパークラスのオブジェクトに変換する(オートボクシング)
+        // Integer a = num;
 
-        // 回数を決めずに処理を繰り返す
-        // int num = 0;
-        // // intの値が5になるまで、処理を繰り返す
-        // while(num <= 5) {
-        //     System.out.println("numの値: " + num);
+        // System.out.println(a);
 
-        //     // メッセージを出力する毎に、numの値を1ずつ増やす
-        //     num++;
-        // }
+        // ラッパークラス
+        // Integer a = 1;
 
-        // 繰り返し実行したい処理を少なくとも1回は必ず実行する
-        int num = 0;
-        do {
-            System.out.println("numの値: " + num);
-            num++;
+        // // ラッパークラスから基本データ型に変換する(アンボクシング)
+        // int num = a;
 
-            //numの値が5になるまで、処理を繰り返す
-        } while(num <= 5);
+        // System.out.println(num);
+
+        // 【ラッパークラスのメソッド】
+        // int num = 1;
+
+        // // 基本データ型からラッパークラスのオブジェクトに変換する(valusOfメソッド)
+        // Integer a = Integer.valueOf(num);
+
+        // System.out.println(a);
+
+        // valueメソッドを使ってラッパークラスから基本データ型に変換
+        Integer a = 1;
+
+        // ラッパークラスから基本データ型に変換
+        int num = a.intValue();
+        System.out.println(a);
     }
 }
