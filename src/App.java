@@ -1,34 +1,44 @@
 public class App {
     public static void main(String[] args) throws Exception {
-        // 基本データ型
-        // int num = 1;
+        // // 【isEmpty は値が空であるかを調べてくれるメソッド】
+        // // 値がnull
+        // String name = null;
+        
+        // // 比較演算子でnullか判定
+        // if(name == null || name.isEmpty()) {
+        //     System.out.println("必須項目が未入力です");
+        // }
 
-        // // 基本データ型からラッパークラスのオブジェクトに変換する(オートボクシング)
-        // Integer a = num;
 
-        // System.out.println(a);
+        // // 【equals は文字列の比較をしてくれるメソッド】
+        
+        // //1回目に入力したパスワード
+        // String pass01 = "test1234";
 
-        // ラッパークラス
-        // Integer a = 1;
+        // //2回目に入力したパスワード
+        // String pass02 = "test1234";
 
-        // // ラッパークラスから基本データ型に変換する(アンボクシング)
-        // int num = a;
+        // // equalsメソッドで同じかどうか判定
+        // if(pass01.equals(pass02)) {
+        //     System.out.println("入力したパスワードは同じです");
+        // } else {
+        //     System.out.println("入力したパスワードは異なります");
+        // }
 
-        // System.out.println(num);
 
-        // 【ラッパークラスのメソッド】
-        // int num = 1;
+        // 【length は文字列の数を判定してくれるメソッド】
+        // 入力したパスワード
+        String pass01 = "";
 
-        // // 基本データ型からラッパークラスのオブジェクトに変換する(valusOfメソッド)
-        // Integer a = Integer.valueOf(num);
-
-        // System.out.println(a);
-
-        // valueメソッドを使ってラッパークラスから基本データ型に変換
-        Integer a = 1;
-
-        // ラッパークラスから基本データ型に変換
-        int num = a.intValue();
-        System.out.println(a);
+        // lengthメソッドで桁数を取得、パスワードが8桁かどうか判定
+        if(pass01.length() == 0) {
+            System.out.println("桁数: " + pass01.length() + "「パスワードが未入力です」");
+        }
+        else if(pass01.length() == 8) {
+            System.out.println("桁数: " + pass01.length() + "「OK！」");
+        }
+        else{
+            System.out.println("桁数: " + pass01.length() + "「パスワードは8桁で入力してください」");
+        }
     }
 }
