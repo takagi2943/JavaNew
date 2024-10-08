@@ -1,19 +1,22 @@
 public class App {
     public static void main(String[] args) throws Exception {
-        int a = 0;
-        int b = a;
-        a = 1;
+        int num01 = 6;
+        int num02 = 2;
+        int result;
 
-        System.out.println("変数 a: " + a);
-        System.out.println("変数 b: " + b);
+        result = num01 + num02;
+        System.out.println("加算: " + result);
 
-        int[] c = new int[1];
-        c[0] = 0;
-        int[] d = c;
-        c[0] =1;
+        result = num01 - num02;
+        System.out.println("減算: " + result);
 
-        System.out.println("配列 c: " + c[0]);
-        System.out.println("配列 d: " + d[0]);
+        result = num01 * num02;
+        System.out.println("乗算: " + result);
 
+        result = num01 / num02;
+        System.out.println("除算: " + result);
+
+        result = num01 % num02;
+        System.out.println("剰算: " + result);
     }
 }
