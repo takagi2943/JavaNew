@@ -1,30 +1,30 @@
-import java.text.SimpleDateFormat;
-import java.util.Calendar;
-import java.util.Date;
-
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.PrintWriter;
 public class App {
-    public static void main(String[] args) throws Exception {
-        // フォーマットを指定
-        SimpleDateFormat sdf = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
+    public static void main(String[] args) {
+        try {
+            // FileWriterクラス
+            FileWriter fw = new FileWriter("秘蔵", true);
 
-        // Calendarクラスで日付データを出力
-        Calendar date01 = Calendar.getInstance();
-        System.out.println("元のデータ(現在日時)  : " + sdf.format(date01.getTime()));
+            // PrintWriterクラス
+            PrintWriter pw = new PrintWriter(new BufferedWriter(fw));
 
-        // addメソッドで加算したデータを出力(現在日時から1か月後)
-        Calendar date02 = Calendar.getInstance();
-        System.out.println("元のデータ(1か月後)  : " + sdf.format(date02.getTime()));
+            // ファイルに記述する
+            pw.println("氏名        ：日本太郎");
+            pw.println("生年月日    ：1999年10月20日");
+            pw.println("採用年月    ：2022年04月01日");
+            pw.println("部署        ：経理部");
 
-        // addメソッドで減算したデータを出力(現在日時から1か月前)
-        Calendar date03 = Calendar.getInstance();
-        date03.add(Calendar.MONTH, -1);
-        System.out.println("元のデータ(1か月後)  : " + sdf.format(date03.getTime()));
+            // ファイルを閉じる
+            pw.close();
 
-        // setメソッドで加算したデータを出力(2020年を指定) 
-        Calendar date04 = Calendar.getInstance();
-        date04.set(Calendar.YEAR, 2020);
-        System.out.println("指定したデータ(2020年)  : " + sdf.format(date04.getTime()));
+            System.out.println("ファイルを出力しました。");
 
-
-    }
+            // 処理に失敗した場合はメッセージを表示 
+            } catch(IOException e) {
+                e.printStackTrace();
+            }
+        }
 }
