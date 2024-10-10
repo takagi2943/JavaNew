@@ -1,28 +1,32 @@
+import java.io.BufferedReader;
 import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
 public class App {
     public static void main(String[] args) {
         try {
-            // FileWriterクラス
-            FileWriter fw = new FileWriter("秘蔵", true);
+            // Fileクラスで読み込むファイルを指定
+            File file = new File("秘蔵");
 
-            // PrintWriterクラス
-            PrintWriter pw = new PrintWriter(new BufferedWriter(fw));
+            // BufferedReaderクラストFileReaderクラスでファイルを読み込む
+            BufferedReader br = new BufferedReader(new FileReader(file));
+            String str;
 
-            // ファイルに記述する
-            pw.println("氏名        ：日本太郎");
-            pw.println("生年月日    ：1999年10月20日");
-            pw.println("採用年月    ：2022年04月01日");
-            pw.println("部署        ：経理部");
+            // readLineメソッドでファイルの内容を1行ずつ読み込む。ファイルの内容がnullじゃなければ出力
+            while((str = br.readLine()) != null) {
+                System.out.println(str);
+            }
 
             // ファイルを閉じる
-            pw.close();
+            br.close();
 
-            System.out.println("ファイルを出力しました。");
-
-            // 処理に失敗した場合はメッセージを表示 
+            // ファイルが存在しない場合 or 処理に失敗した場合はメッセージを表示 
+            } catch(FileNotFoundException e) {
+                e.printStackTrace();
             } catch(IOException e) {
                 e.printStackTrace();
             }
