@@ -1,16 +1,28 @@
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
+
 public class App {
     public static void main(String[] args) throws Exception {
-       // メタ文字について
-       // 分割する元データ
-       String str = "りんご バナナ ミカン" ;
-       System.out.println("果物の名前(分割前): " + str);
+        // Dataクラス
+        Date date01 = new Date();
 
-       // 半角スペースで分割する
-       String[] newStr = str.split("\\s+");
+        // Calendarクラス
+        Calendar date02 = Calendar.getInstance();
 
-       // 繰り返し処理
-       for(int i = 0; i < newStr.length; i++) {
-        System.out.println("果物の名前(分割後): " + newStr[i]);
-       }
+        // SimpleDateFormatクラスでフォーマットを指定
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss E");
+
+        // Dataクラスの日付をそのまま出力
+        System.out.println("Dateクラス(フォーマットなし)  : " + date01);
+        
+        // Dateクラスの日付をSimpleDateFormatクラスで指定したフォーマットで出力
+        System.out.println("Dateクラス(フォーマットあり)  : " + sdf.format(date01));
+
+        // Calendarクラスの日付をそのまま出力
+        System.out.println("Dateクラス(フォーマットなし)  : " + date02.getTime());
+
+        // Calendarクラスの日付をSimpleDateFormatクラスで指定したフォーマットで出力
+        System.out.println("Dateクラス(フォーマットあり)  : " + sdf.format(date02.getTime()));
     }
 }
